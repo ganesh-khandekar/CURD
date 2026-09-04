@@ -4,6 +4,8 @@ import com.ganesh.curd_Operation.entity.Student;
 import com.ganesh.curd_Operation.repository.StudentRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class StudentService {
     StudentRepository studentRepository;
@@ -19,5 +21,9 @@ public class StudentService {
 
     public Student getbyID(Long id) {
         return studentRepository.getById(id);
+    }
+
+    public List<Student> getAll() {
+        return studentRepository.findAll();
     }
 }

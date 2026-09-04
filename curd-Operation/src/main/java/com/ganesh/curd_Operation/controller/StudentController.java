@@ -4,6 +4,8 @@ import com.ganesh.curd_Operation.entity.Student;
 import com.ganesh.curd_Operation.service.StudentService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("student/api")
 public class StudentController {
@@ -24,5 +26,10 @@ public class StudentController {
     public  Student getStudent(@PathVariable Long id){
        Student student = studentService.getbyID(id);
        return student;
+    }
+
+    @GetMapping("/")
+    public List<Student> getAll(){
+        return studentService.getAll();
     }
 }
