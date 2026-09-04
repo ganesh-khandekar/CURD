@@ -32,4 +32,10 @@ public class StudentController {
     public List<Student> getAll(){
         return studentService.getAll();
     }
+
+    @PatchMapping("id/{id}")
+    public String SoftDelete(@PathVariable Long id){
+        studentService.softDelete(id);
+        return "deleted";
+    }
 }

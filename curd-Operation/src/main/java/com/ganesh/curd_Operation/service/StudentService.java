@@ -26,4 +26,9 @@ public class StudentService {
     public List<Student> getAll() {
         return studentRepository.findAll();
     }
+    public void softDelete(Long id){
+        Student student = studentRepository.getById(id);
+        student.setActive(false);
+        studentRepository.save(student);
+    }
 }
