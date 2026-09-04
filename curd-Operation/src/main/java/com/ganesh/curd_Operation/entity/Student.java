@@ -20,6 +20,7 @@ public class Student {
     private Long id;
     private String name;
     private String surname;
+    private Integer pnr;
     private String email;
     private  Boolean active;
 

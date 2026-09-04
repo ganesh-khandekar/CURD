@@ -2,10 +2,7 @@ package com.ganesh.curd_Operation.controller;
 
 import com.ganesh.curd_Operation.entity.Student;
 import com.ganesh.curd_Operation.service.StudentService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("student/api")
@@ -21,5 +18,11 @@ public class StudentController {
     public String create(@RequestBody Student student){
         studentService.create(student);
         return "sucess";
+    }
+
+    @GetMapping("id/{id}")
+    public  Student getStudent(@PathVariable Long id){
+       Student student = studentService.getbyID(id);
+       return student;
     }
 }
