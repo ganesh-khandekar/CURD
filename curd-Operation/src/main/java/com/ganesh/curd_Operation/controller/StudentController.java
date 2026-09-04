@@ -38,4 +38,10 @@ public class StudentController {
         studentService.softDelete(id);
         return "deleted";
     }
+
+    @DeleteMapping("id/{id}")
+    public String hardDelete(@PathVariable Long id){
+        studentService.hardDelete(id);
+        return "Hard deleted";
+    }
 }
